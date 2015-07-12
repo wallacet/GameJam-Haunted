@@ -10,12 +10,7 @@ public class PlayerScript : MonoBehaviour {
 	public LayerMask layersToHaunt;
 	public MoveType movementType = MoveType.GHOST;
 	public float moveSpeed = 2;
-	/*
-	 * set by haunted item. normal is ghost.
-	 * cube = Can not move when on the ground. Can hop. Has great air control.
-	 * ball = Can roll and move in air.
-	 * vehicle = can drive. No air control.
-	 * */
+	public float jumpStrength = 20.0f;
 	#endregion
 
 
@@ -74,17 +69,20 @@ public class PlayerScript : MonoBehaviour {
 			case MoveType.GHOST:
 				moveDir += transform.forward * Input.GetAxis( "Vertical" );
 				moveDir += transform.right * Input.GetAxis( "Horizontal" );
+				this.transform.position += moveDir.normalized * (moveSpeed * Time.deltaTime);
 				break;
 			case MoveType.CUBE:
 				// Only move while jumping. Needs work.
 				if ( Input.GetButton( "Jump" ) ) {
 					moveDir += transform.forward * Input.GetAxis( "Vertical" );
 					moveDir += transform.right * Input.GetAxis( "Horizontal" );
+
+					moveDir += transform.up;
+
+					CurrentHaunted.GetComponent<Rigidbody>().AddForce( moveDir.normalized * this.jumpStrength );
 				}
 				break;
 		}
-
-		this.transform.position += moveDir.normalized * (moveSpeed * Time.deltaTime);
 	}
 	#endregion
 }
