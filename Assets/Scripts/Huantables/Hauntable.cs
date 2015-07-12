@@ -10,6 +10,7 @@ public class Hauntable : MonoBehaviour {
 	// Need to discuss what to do with these.
 	public bool isHauntable = true;
 	public int health = 100;
+	public bool canJump = true;
 	public bool explodes = false;
 	#endregion
 
@@ -18,6 +19,18 @@ public class Hauntable : MonoBehaviour {
 		return this.gameObject;
 	}
 	#endregion
+
+	public void OnCollisionEnter(Collision collision) {
+		if(collision.gameObject.layer == 0) //default, the world
+		{
+			RaycastHit hit;
+			if(Physics.Raycast (transform.position, Vector3.down * 5, 5))
+			{
+				//as long as there's generally something close by to the ground, go to jump again.
+				canJump = true;
+			}
+		}
+	}
 }
 
 // Enum's are less error prone than passing strings and have much faster

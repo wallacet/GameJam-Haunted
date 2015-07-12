@@ -73,7 +73,9 @@ public class PlayerScript : MonoBehaviour {
 				break;
 			case MoveType.CUBE:
 				// Only move while jumping. Needs work.
-				if ( Input.GetButton( "Jump" ) ) {
+				if ( Input.GetButtonDown( "Jump" ) && CurrentHaunted.GetComponent<Hauntable>().canJump) {
+					
+					CurrentHaunted.GetComponent<Hauntable>().canJump = false;
 					moveDir += transform.forward * Input.GetAxis( "Vertical" );
 					moveDir += transform.right * Input.GetAxis( "Horizontal" );
 
