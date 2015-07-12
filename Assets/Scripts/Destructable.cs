@@ -7,6 +7,7 @@ public class Destructable : MonoBehaviour {
 	public GameObject gibs;
 	[Tooltip( "How much random force should be given to a gib on destroy?" )]
 	public int gibForce = 50;
+	public int numberGibs = 1;
 	public AudioClip[] explosionSounds;
 	[Tooltip( "How much does it take for this barrel to explode?" )]
 	public float sensitivity = 1.0f;
@@ -24,17 +25,30 @@ public class Destructable : MonoBehaviour {
 	#region Public Methods
 	public void Explode() {
 		Destroy( this.gameObject );
-		GameObject gib = (GameObject) Instantiate( this.gibs, this.transform.position, this.transform.rotation );
-		Vector3 torque = this.rb.velocity;
-		torque.x += Random.Range (-gibForce,gibForce);
-		torque.y += Random.Range (-gibForce,gibForce);
-		torque.z += Random.Range (-gibForce,gibForce);
-		gib.GetComponent<Rigidbody>().AddTorque(torque);
-		if(this.explosionSounds.Length > 0)
+		for(int i = 0; i <= numberGibs; i++)
 		{
-			gib.GetComponent<AudioSource>().clip = this.explosionSounds[Random.Range( 0, this.explosionSounds.Length )];
-			gib.GetComponent<AudioSource>().Play();
+			Vector3 startposition = this.transform.position;
+			if(numberGibs > 1)
+			{
+				//if there's more, start them separate.
+				startposition.x += Random.Range (-gibForce,gibForce);
+				startposition.y += Random.Range (-gibForce,gibForce);
+				startposition.z += Random.Range (-gibForce,gibForce);
+			}
+			GameObject gib = (GameObject) Instantiate( this.gibs, startposition, this.transform.rotation );
+			Vector3 torque = this.rb.velocity;
+			torque.x += Random.Range (-gibForce,gibForce);
+			torque.y += Random.Range (-gibForce,gibForce);
+			torque.z += Random.Range (-gibForce,gibForce);
+			gib.GetComponent<Rigidbody>().AddTorque(torque);
+			if(this.explosionSounds.Length > 0)
+			{
+				gib.GetComponent<AudioSource>().clip = this.explosionSounds[Random.Range( 0, this.explosionSounds.Length )];
+				gib.GetComponent<AudioSource>().Play();
+			}
 		}
+
+		
 		Score.AddScore( this.scoreValue );
 	}
 	#endregion
