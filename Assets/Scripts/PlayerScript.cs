@@ -79,7 +79,7 @@ public class PlayerScript : MonoBehaviour {
 					moveDir += transform.forward * Input.GetAxis( "Vertical" );
 					moveDir += transform.right * Input.GetAxis( "Horizontal" );
 
-					moveDir += transform.up;
+					moveDir += Vector3.up;
 
 					CurrentHaunted.GetComponent<Rigidbody>().AddForce( moveDir.normalized * this.jumpStrength );
 				}
