@@ -9,8 +9,8 @@ public class ExplosiveBarrelScript : Hauntable {
 
 	#region Implementation of Abstract Methods of Hauntable
 	public override void Haunt( GameObject haunter ) {
-		Destroy(this.gameObject);
-		Instantiate(explosionPrefab, this.transform.position, this.transform.rotation);
+		Destroy( this.gameObject );
+		Instantiate( explosionPrefab, this.transform.position, this.transform.rotation );
 	}
 	#endregion
 
