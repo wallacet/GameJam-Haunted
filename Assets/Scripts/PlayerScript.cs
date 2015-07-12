@@ -100,6 +100,7 @@ public class PlayerScript : MonoBehaviour {
 
 				// Happens every frame
 				RaycastHit hit;
+				/*
 				if ( Physics.Raycast( CurrentHaunted.transform.position, Vector3.down, out hit, 4.0f ) ) {
 					CurrentHaunted.transform.position += moveDir * Time.deltaTime * moveSpeed;
 				} else {
@@ -116,6 +117,7 @@ public class PlayerScript : MonoBehaviour {
 														);
 
 				CurrentHaunted.transform.rotation = rot;
+				*/
 				break;
 		}
 	}
