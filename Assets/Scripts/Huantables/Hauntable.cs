@@ -1,23 +1,31 @@
 ﻿using UnityEngine;
 using System.Collections;
-//Removed the abstract, we want to reference it directly.
 
 public class Hauntable : MonoBehaviour {
 
-	public string movetype = "cube";
+	#region Public Variables
+	public MoveType moveType = MoveType.CUBE;
+
+	// Need to discuss what to do with these.
 	public bool isHauntable = true;
 	public int health = 100;
 	public bool explodes = false;
-	/*
-	 * cube = Can not move when on the ground. Can hop. Has great air control.
-	 * ball = Can roll and move in air.
-	 * vehicle = can drive. No air control.
-	 * */
+	#endregion
 
-	public GameObject Haunt()
-	{
-		//Since we only have one player haunting, took out the "haunter" param.
-		//haunted = true;
+	#region Public Methods
+	public GameObject Haunt() {
 		return this.gameObject;
 	}
+	#endregion
 }
+
+// Enum's are less error prone than passing strings and have much faster
+// comparisions (since they are just fancy ints).
+public enum MoveType { NONE, CUBE, BALL, VEHICLE, GHOST }
+/*
+ * NONE = Cannot move at all in this object. Added for sake of convention.
+ * CUBE = Can not move when on the ground. Can hop. Has great air control.
+ * BALL = Can roll and move in air.
+ * VEHICLE = Can drive. No air control.
+ * GHOST = Player defualt free move.
+*/

@@ -8,22 +8,20 @@ public class PlayerScript : MonoBehaviour {
 	public float maxHauntDistance = 10.0f;
 	[Tooltip( "Which physics layers should be able to be haunted?" )]
 	public LayerMask layersToHaunt;
-	#endregion
-	public string movementtype = "ghost";
-	public float movespeed = 2;
+	public MoveType movementType = MoveType.GHOST;
+	public float moveSpeed = 2;
 	/*
 	 * set by haunted item. normal is ghost.
 	 * cube = Can not move when on the ground. Can hop. Has great air control.
 	 * ball = Can roll and move in air.
 	 * vehicle = can drive. No air control.
 	 * */
+	#endregion
+
 
 	#region Private Variables
 	private Camera cam;
 	private GameObject CurrentHaunted = null;
-
-
-
 	#endregion
 
 	#region Unity Callbacks
@@ -36,17 +34,16 @@ public class PlayerScript : MonoBehaviour {
 	}
 
 	public void Update() {
-		Vector3 UpdatedMove = this.transform.position;
-		if(CurrentHaunted != null)
-		{
-			UpdatedMove = CurrentHaunted.transform.position;
-		}
+		UpdateMovement();
 
 		if ( Input.GetButtonDown( "Haunt" ) ) {
-			if(CurrentHaunted != null)
-			{
+			if ( CurrentHaunted != null ) {
 				CurrentHaunted = null;
-				movementtype = "ghost";
+				movementType = MoveType.GHOST;
+
+				// Stop following.
+				transform.parent = null;
+
 				//eject from current object and stop execution.
 				return;
 			}
@@ -55,34 +52,39 @@ public class PlayerScript : MonoBehaviour {
 				Hauntable h = hit.collider.GetComponent<Hauntable>();
 				if ( h != null ) {
 					CurrentHaunted = h.Haunt();
-					movementtype = CurrentHaunted.GetComponent<Hauntable>().movetype;
+					movementType = CurrentHaunted.GetComponent<Hauntable>().moveType;
+
+					// Jump to haunted object.
+					transform.position = h.transform.position;
+
+					// Make haunted object our parent, so we follow it around.
+					transform.parent = h.transform;
+
 				}
 			}
 		}
-
-		//Update controls;
-		if(Input.GetButton("Vertical")){
-			if(movementtype == "ghost")
-			{
-				UpdatedMove += transform.forward * Input.GetAxis("Vertical") * (movespeed * Time.deltaTime*10);
-			}
-		}
-		if(Input.GetButton("Horizontal")){
-			if(movementtype == "ghost")
-			{
-				UpdatedMove += transform.right * Input.GetAxis("Horizontal") * (movespeed * Time.deltaTime*10);
-			}
-		}
-		if(Input.GetButton("Jump")){
-			if(movementtype == "cube")
-			{
-				UpdatedMove += transform.right * Input.GetAxis("Horizontal") * (movespeed * Time.deltaTime*10);
-			}
-		}
-		this.transform.position = UpdatedMove;
 	}
-
-	
 	#endregion
 
+	#region Private Helper Methods
+	private void UpdateMovement() {
+		Vector3 moveDir = Vector3.zero;
+
+		switch ( movementType ) {
+			case MoveType.GHOST:
+				moveDir += transform.forward * Input.GetAxis( "Vertical" );
+				moveDir += transform.right * Input.GetAxis( "Horizontal" );
+				break;
+			case MoveType.CUBE:
+				// Only move while jumping. Needs work.
+				if ( Input.GetButton( "Jump" ) ) {
+					moveDir += transform.forward * Input.GetAxis( "Vertical" );
+					moveDir += transform.right * Input.GetAxis( "Horizontal" );
+				}
+				break;
+		}
+
+		this.transform.position += moveDir.normalized * (moveSpeed * Time.deltaTime);
+	}
+	#endregion
 }
