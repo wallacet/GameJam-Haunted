@@ -23,7 +23,6 @@ public class Hauntable : MonoBehaviour {
 	public void OnCollisionEnter(Collision collision) {
 		if(collision.gameObject.layer == 0) //default, the world
 		{
-			RaycastHit hit;
 			if(Physics.Raycast (transform.position, Vector3.down * 5, 5))
 			{
 				//as long as there's generally something close by to the ground, go to jump again.

@@ -34,6 +34,8 @@ public class PlayerScript : MonoBehaviour {
 
 		if ( Input.GetButtonDown( "Haunt" ) ) {
 			if ( CurrentHaunted != null ) {
+				if ( movementType == MoveType.VEHICLE )
+					CurrentHaunted.GetComponent<DriveVehicle>().inCar = false;
 				CurrentHaunted = null;
 				movementType = MoveType.GHOST;
 
@@ -45,7 +47,11 @@ public class PlayerScript : MonoBehaviour {
 			}
 			RaycastHit hit;
 			if ( Physics.Raycast( this.cam.transform.position, this.cam.transform.forward, out hit, this.maxHauntDistance, this.layersToHaunt ) ) {
-				Hauntable h = hit.collider.GetComponent<Hauntable>();
+				GameObject hitRoot = hit.collider.gameObject;
+				while( hitRoot.transform.parent != null)
+					hitRoot = hitRoot.transform.parent.gameObject;
+
+				Hauntable h = hitRoot.GetComponent<Hauntable>();
 				if ( h != null ) {
 					CurrentHaunted = h.Haunt();
 					movementType = CurrentHaunted.GetComponent<Hauntable>().moveType;
@@ -55,6 +61,9 @@ public class PlayerScript : MonoBehaviour {
 
 					// Make haunted object our parent, so we follow it around.
 					transform.parent = h.transform;
+
+					if( movementType == MoveType.VEHICLE)
+						CurrentHaunted.GetComponent<DriveVehicle>().inCar = true;
 
 				}
 			}
@@ -89,6 +98,7 @@ public class PlayerScript : MonoBehaviour {
 				}
 				break;
 			case MoveType.VEHICLE:
+				/*
 				// Needs LOTS of work
 				moveDir += Vector3.ProjectOnPlane(
 									CurrentHaunted.transform.forward * Input.GetAxis( "Vertical" ),
@@ -99,8 +109,8 @@ public class PlayerScript : MonoBehaviour {
 				moveDir *= Mathf.Clamp( Mathf.Cos( CurrentHaunted.transform.rotation.eulerAngles.x * Mathf.Deg2Rad ), 0, 1 );
 
 				// Happens every frame
+				
 				RaycastHit hit;
-				/*
 				if ( Physics.Raycast( CurrentHaunted.transform.position, Vector3.down, out hit, 4.0f ) ) {
 					CurrentHaunted.transform.position += moveDir * Time.deltaTime * moveSpeed;
 				} else {

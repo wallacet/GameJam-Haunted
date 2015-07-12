@@ -15,7 +15,6 @@ public class DriveVehicle : MonoBehaviour {
 	public float centerOfMass = -0.9f;
 	public int maxTurn = 2;
 	public float turnI = 0;
-	public int grabity = -100;
 	public int speedThreshA = 600;
 	public int speedThreshB = 1200;
 	public int speedThreshC = 2500;
@@ -31,7 +30,6 @@ public class DriveVehicle : MonoBehaviour {
 	void Start() {
 		Rigidbody rb = GetComponent<Rigidbody>();
 		rb.centerOfMass = new Vector3( rb.centerOfMass.x, centerOfMass, rb.centerOfMass.z );
-		Physics.gravity = new Vector3( 0, grabity, 0 );
 	}
 
 
@@ -132,17 +130,17 @@ public class DriveVehicle : MonoBehaviour {
 				}
 			}
 
-			GameObject.Find( "Player" ).transform.position = this.transform.position;
+			//GameObject.Find( "Player" ).transform.position = this.transform.position;
 			//GameObject.FindWithTag("Player").vertSpeed = 0;
 
 			if ( Input.GetKey( KeyCode.W ) ) {
 				if ( wheelFL.rpm <= 600 ) {
-					wheelRL.motorTorque = 150;
-					wheelRR.motorTorque = 150;
+					wheelRL.motorTorque = maxTorque;
+					wheelRR.motorTorque = maxTorque;
 				}
 				if ( wheelFL.rpm <= 1200 && wheelFL.rpm > 600 ) {
-					wheelRL.motorTorque = 60;
-					wheelRR.motorTorque = 60;
+					wheelRL.motorTorque = maxTorque / 3.0f;
+					wheelRR.motorTorque = maxTorque / 3.0f;
 				}
 			}
 			if ( turnI >= 15 ) {
@@ -158,12 +156,12 @@ public class DriveVehicle : MonoBehaviour {
 			if ( Input.GetKey( KeyCode.S ) ) {
 				if ( wheelFL.rpm > -500 ) {
 					if ( wheelFL.rpm >= 1500 ) {
-						wheelRR.motorTorque = -200;
-						wheelRL.motorTorque = -200;
+						wheelRR.motorTorque = -maxTorque / 2.0f;
+						wheelRL.motorTorque = -maxTorque / 2.0f;
 					}
 					if ( wheelFL.rpm <= 800 ) {
-						wheelRR.motorTorque = -100;
-						wheelRL.motorTorque = -100;
+						wheelRR.motorTorque = -maxTorque / 4.0f;
+						wheelRL.motorTorque = -maxTorque / 4.0f;
 					}
 				}
 			}

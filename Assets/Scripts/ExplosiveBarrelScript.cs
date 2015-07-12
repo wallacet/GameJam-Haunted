@@ -38,6 +38,7 @@ public class ExplosiveBarrelScript : MonoBehaviour {
 		// Calculating magnetude is slow; using sqrMag instead.
 		if ( !exploding && this.rb.velocity.sqrMagnitude >= sensitivity * sensitivity ) {
 			this.exploding = true;
+			Debug.Log( "Starting explosion: " + this.rb.velocity.magnitude );
 			// Since we don't do this every update, magnitude is ok.
 			this.Invoke( "Explode", this.timeToExplode / this.rb.velocity.magnitude );
 		}
