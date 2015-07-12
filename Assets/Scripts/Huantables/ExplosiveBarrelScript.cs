@@ -5,7 +5,10 @@ public class ExplosiveBarrelScript : Hauntable {
 
 	#region Public Variables
 	public GameObject explosionPrefab;
+	public AudioClip[] explosionSounds;
+	[Tooltip( "How much does it take for this barrel to explode?" )]
 	public float sensitivity = 1.0f;
+	[Tooltip( "How long does it take to explode after being nudged barely over our sensitivity? When hit harder, the time before exploding will be shorter." )]
 	public float timeToExplode = 5.0f;
 	#endregion
 
@@ -17,7 +20,9 @@ public class ExplosiveBarrelScript : Hauntable {
 	#region Implementation of Abstract Methods of Hauntable
 	public override void Haunt( GameObject haunter = null ) {
 		Destroy( this.gameObject );
-		Instantiate( explosionPrefab, this.transform.position, this.transform.rotation );
+		GameObject explosion = (GameObject) Instantiate( this.explosionPrefab, this.transform.position, this.transform.rotation );
+		explosion.GetComponent<AudioSource>().clip = this.explosionSounds[Random.Range( 0, this.explosionSounds.Length )];
+		explosion.GetComponent<AudioSource>().Play();
 	}
 	#endregion
 
