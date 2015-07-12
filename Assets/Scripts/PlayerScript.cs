@@ -25,7 +25,10 @@ public class PlayerScript : MonoBehaviour {
 		if ( Input.GetButtonDown( "Haunt" ) ) {
 			RaycastHit hit;
 			if ( Physics.Raycast( this.cam.transform.position, this.cam.transform.forward, out hit, this.maxHauntDistance, this.layersToHaunt ) ) {
-				Debug.Log( "Now haunting: " + hit.collider.gameObject.name );
+				Hauntable h = hit.collider.GetComponent<Hauntable>();
+				if ( h != null ) {
+					h.Haunt( this.gameObject );
+				}
 			}
 		}
 	}
