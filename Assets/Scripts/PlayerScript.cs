@@ -105,7 +105,14 @@ public class PlayerScript : MonoBehaviour {
 					foreach ( Transform t in CurrentHaunted.transform.Find( "Beam" ) ) {
 						t.parent = null;
 						t.gameObject.GetComponent<Rigidbody>().isKinematic = false;
-						t.gameObject.GetComponent<BoxCollider>().enabled = true;
+						if(t.gameObject.GetComponent<BoxCollider>() != null)
+						{
+							t.gameObject.GetComponent<BoxCollider>().enabled = true;
+						}
+						if(t.gameObject.GetComponent<CapsuleCollider>() != null)
+						{
+							t.gameObject.GetComponent<CapsuleCollider>().enabled = true;
+						}
 					}
 				}
 				break;
