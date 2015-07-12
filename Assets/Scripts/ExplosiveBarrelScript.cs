@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ExplosiveBarrelScript : Hauntable {
+public class ExplosiveBarrelScript : MonoBehaviour {
 
 	#region Public Variables
 	public GameObject explosionPrefab;
@@ -19,15 +19,14 @@ public class ExplosiveBarrelScript : Hauntable {
 	private bool exploding = false;
 	#endregion
 
-	//Barrels should not be hauntable, thus making you think of creative ways to attack
-	#region Implementation of Abstract Methods of Hauntable
-	/*public override void Haunt() {
+	#region Public Methods
+	public void Explode() {
 		Destroy( this.gameObject );
 		GameObject explosion = (GameObject) Instantiate( this.explosionPrefab, this.transform.position, this.transform.rotation );
 		explosion.GetComponent<AudioSource>().clip = this.explosionSounds[Random.Range( 0, this.explosionSounds.Length )];
 		explosion.GetComponent<AudioSource>().Play();
 		Score.AddScore( this.scoreValue );
-	}*/
+	}
 	#endregion
 
 	#region Unity Callbacks
@@ -40,15 +39,8 @@ public class ExplosiveBarrelScript : Hauntable {
 		if ( !exploding && this.rb.velocity.sqrMagnitude >= sensitivity * sensitivity ) {
 			this.exploding = true;
 			// Since we don't do this every update, magnitude is ok.
-			this.Invoke( "HauntWithThis", this.timeToExplode / this.rb.velocity.magnitude );
+			this.Invoke( "Explode", this.timeToExplode / this.rb.velocity.magnitude );
 		}
 	}
 	#endregion
-
-	#region Private Helper Methods
-	/*private void HauntWithThis() {
-		this.Haunt( this.gameObject );
-	}*/
-	#endregion
-
 }
