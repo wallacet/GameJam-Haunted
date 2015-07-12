@@ -11,6 +11,7 @@ public class PlayerScript : MonoBehaviour {
 	public MoveType movementType = MoveType.GHOST;
 	public float moveSpeed = 2;
 	public float jumpStrength = 20.0f;
+	public float steeringSpeed = 10.0f;
 	#endregion
 
 
@@ -69,20 +70,52 @@ public class PlayerScript : MonoBehaviour {
 			case MoveType.GHOST:
 				moveDir += transform.forward * Input.GetAxis( "Vertical" );
 				moveDir += transform.right * Input.GetAxis( "Horizontal" );
-				this.transform.position += moveDir.normalized * (moveSpeed * Time.deltaTime);
+
+				//Happens every frame
+				this.transform.position += moveDir.normalized * moveSpeed * Time.deltaTime;
 				break;
 			case MoveType.CUBE:
-				// Only move while jumping. Needs work.
-				if ( Input.GetButtonDown( "Jump" ) && CurrentHaunted.GetComponent<Hauntable>().canJump) {
-					
+				// Only move while jumping
+				if ( Input.GetButtonDown( "Jump" ) && CurrentHaunted.GetComponent<Hauntable>().canJump ) {
+
 					CurrentHaunted.GetComponent<Hauntable>().canJump = false;
 					moveDir += transform.forward * Input.GetAxis( "Vertical" );
 					moveDir += transform.right * Input.GetAxis( "Horizontal" );
 
 					moveDir += Vector3.up;
 
+					// Happens for one frame
 					CurrentHaunted.GetComponent<Rigidbody>().AddForce( moveDir.normalized * this.jumpStrength );
 				}
+				break;
+			case MoveType.VEHICLE:
+				// Needs LOTS of work
+				moveDir += Vector3.ProjectOnPlane(
+									CurrentHaunted.transform.forward * Input.GetAxis( "Vertical" ),
+									Vector3.up );
+
+				// How are your math skillz, chumps?
+				moveDir *= Mathf.Clamp( Mathf.Cos( CurrentHaunted.transform.rotation.eulerAngles.z * Mathf.Deg2Rad ), 0, 1 );
+				moveDir *= Mathf.Clamp( Mathf.Cos( CurrentHaunted.transform.rotation.eulerAngles.x * Mathf.Deg2Rad ), 0, 1 );
+
+				// Happens every frame
+				RaycastHit hit;
+				if ( Physics.Raycast( CurrentHaunted.transform.position, Vector3.down, out hit, 4.0f ) ) {
+					CurrentHaunted.transform.position += moveDir * Time.deltaTime * moveSpeed;
+				} else {
+					Debug.Log( "Not touching ground." );
+					Debug.DrawRay( CurrentHaunted.transform.position, Vector3.down * 4.0f, Color.red );
+				}
+
+				float curRot = CurrentHaunted.transform.rotation.eulerAngles.y;
+				float targetRot = cam.transform.rotation.eulerAngles.y;
+
+				Quaternion rot = Quaternion.Euler( CurrentHaunted.transform.rotation.eulerAngles.x,
+														Mathf.LerpAngle( curRot, targetRot, Time.deltaTime ),
+														CurrentHaunted.transform.rotation.eulerAngles.z
+														);
+
+				CurrentHaunted.transform.rotation = rot;
 				break;
 		}
 	}
