@@ -101,7 +101,7 @@ public class PlayerScript : MonoBehaviour {
 				// Handled by drive script
 				break;
 			case MoveType.CRANE:
-				if ( Input.GetButtonDown( "Jump" ) ) {
+				if ( Input.GetButton( "Jump" ) ) {
 					foreach ( Transform t in CurrentHaunted.transform.Find( "Beam" ) ) {
 						t.parent = null;
 						t.gameObject.GetComponent<Rigidbody>().isKinematic = false;
