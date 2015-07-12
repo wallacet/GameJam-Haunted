@@ -1,10 +1,17 @@
 fileFormatVersion: 2
-guid: 9778e8fadbbffc847aa5d5160aeb7e2b
-timeCreated: 1436726115
+guid: b494d725d18d61f4ea3348f34ee3d62d
+timeCreated: 1436725716
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Whitefence
+    7400000: Default Take
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
