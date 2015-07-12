@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingTime: 30
-  gameOverPrefab: {fileID: 0}
+  gameOverPrefab: {fileID: 112640, guid: c425565b519d71b49b357d3da54d17f2, type: 2}
 --- !u!114 &11495010
 MonoBehaviour:
   m_ObjectHideFlags: 1
