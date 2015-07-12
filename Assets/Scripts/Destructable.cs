@@ -25,7 +25,7 @@ public class Destructable : MonoBehaviour {
 	#region Public Methods
 	public void Explode() {
 		Destroy( this.gameObject );
-		for(int i = 0; i <= numberGibs; i++)
+		for(int i = 1; i <= numberGibs; i++)
 		{
 			Vector3 startposition = this.transform.position;
 			if(numberGibs > 1)

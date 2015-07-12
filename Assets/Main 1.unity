@@ -271,11 +271,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5479690, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: m_Mass
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: gibForce
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: numberGibs
@@ -353,11 +353,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5479690, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: m_Mass
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: gibForce
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: numberGibs
@@ -435,11 +435,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5479690, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: m_Mass
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: gibForce
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: numberGibs
@@ -752,6 +752,10 @@ Prefab:
       propertyPath: m_Name
       value: ExplosiveBarrel (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5421878, guid: 0966c0cabe50e7a459ac9d623c0033f8, type: 2}
+      propertyPath: m_Mass
+      value: 1500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0966c0cabe50e7a459ac9d623c0033f8, type: 2}
   m_IsPrefabParent: 0
@@ -824,11 +828,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5479690, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: m_Mass
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: gibForce
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: numberGibs
@@ -906,11 +910,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5479690, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: m_Mass
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: gibForce
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: numberGibs
@@ -988,11 +992,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5479690, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: m_Mass
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: gibForce
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: numberGibs
@@ -1039,6 +1043,10 @@ Prefab:
     - target: {fileID: 418436, guid: 0966c0cabe50e7a459ac9d623c0033f8, type: 2}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421878, guid: 0966c0cabe50e7a459ac9d623c0033f8, type: 2}
+      propertyPath: m_Mass
+      value: 1500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0966c0cabe50e7a459ac9d623c0033f8, type: 2}
@@ -1089,6 +1097,10 @@ Prefab:
     - target: {fileID: 156092, guid: 0966c0cabe50e7a459ac9d623c0033f8, type: 2}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421878, guid: 0966c0cabe50e7a459ac9d623c0033f8, type: 2}
+      propertyPath: m_Mass
+      value: 1500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0966c0cabe50e7a459ac9d623c0033f8, type: 2}
@@ -1375,11 +1387,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5479690, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: m_Mass
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: gibForce
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: numberGibs
@@ -1457,11 +1469,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5479690, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: m_Mass
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: gibForce
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: numberGibs
@@ -1512,6 +1524,10 @@ Prefab:
     - target: {fileID: 11472742, guid: 05b0a3c301822044ba23e78c6f75b994, type: 2}
       propertyPath: sensitivity
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5423398, guid: 05b0a3c301822044ba23e78c6f75b994, type: 2}
+      propertyPath: m_Mass
+      value: 3000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 05b0a3c301822044ba23e78c6f75b994, type: 2}
@@ -1585,11 +1601,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5479690, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: m_Mass
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: gibForce
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: numberGibs
@@ -1639,7 +1655,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5458894, guid: 37330bd02defe6e4c9fecd3655a7281b, type: 2}
       propertyPath: m_Mass
-      value: 100
+      value: 1500
       objectReference: {fileID: 0}
     - target: {fileID: 11484332, guid: 37330bd02defe6e4c9fecd3655a7281b, type: 2}
       propertyPath: gibs
@@ -1717,11 +1733,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5479690, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: m_Mass
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: gibForce
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: numberGibs
@@ -1799,11 +1815,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5479690, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: m_Mass
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: gibForce
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: numberGibs
@@ -1877,11 +1893,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5479690, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: m_Mass
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: gibForce
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: numberGibs
@@ -1964,6 +1980,22 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7166edf3f6ae6e4c98d1bbd99828930, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1559248515 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: 513c04ff31e4ddc4ebf26ec3f08fa2e6, type: 3}
+  m_PrefabInternal: {fileID: 461606940}
+--- !u!65 &1559248516
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1559248515}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.7305622, y: 10.3295803, z: 11.6222649}
+  m_Center: {x: -.0720905066, y: -5.86352826e-07, z: 1.94550633}
 --- !u!1001 &1570114326
 Prefab:
   m_ObjectHideFlags: 0
@@ -2033,11 +2065,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5479690, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: m_Mass
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: gibForce
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: numberGibs
@@ -2175,11 +2207,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5479690, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: m_Mass
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: gibForce
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: numberGibs
@@ -2421,11 +2453,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5479690, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: m_Mass
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: gibForce
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: numberGibs
@@ -2503,11 +2535,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5479690, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: m_Mass
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: gibForce
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: numberGibs
@@ -2658,11 +2690,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5479690, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: m_Mass
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: gibForce
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: numberGibs
@@ -2713,6 +2745,10 @@ Prefab:
     - target: {fileID: 156092, guid: 0966c0cabe50e7a459ac9d623c0033f8, type: 2}
       propertyPath: m_Name
       value: ExplosiveBarrel (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421878, guid: 0966c0cabe50e7a459ac9d623c0033f8, type: 2}
+      propertyPath: m_Mass
+      value: 1500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0966c0cabe50e7a459ac9d623c0033f8, type: 2}
@@ -2786,11 +2822,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5479690, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: m_Mass
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: gibForce
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: numberGibs
@@ -2841,6 +2877,10 @@ Prefab:
     - target: {fileID: 156092, guid: 0966c0cabe50e7a459ac9d623c0033f8, type: 2}
       propertyPath: m_Name
       value: ExplosiveBarrel (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421878, guid: 0966c0cabe50e7a459ac9d623c0033f8, type: 2}
+      propertyPath: m_Mass
+      value: 1500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0966c0cabe50e7a459ac9d623c0033f8, type: 2}
@@ -2914,11 +2954,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5479690, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: m_Mass
-      value: 10
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: gibForce
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11498114, guid: 6abbf57a6659b0a478159ace502b0fb9, type: 2}
       propertyPath: numberGibs
@@ -2969,6 +3009,10 @@ Prefab:
     - target: {fileID: 156092, guid: 0966c0cabe50e7a459ac9d623c0033f8, type: 2}
       propertyPath: m_Name
       value: ExplosiveBarrel (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5421878, guid: 0966c0cabe50e7a459ac9d623c0033f8, type: 2}
+      propertyPath: m_Mass
+      value: 1500
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0966c0cabe50e7a459ac9d623c0033f8, type: 2}
