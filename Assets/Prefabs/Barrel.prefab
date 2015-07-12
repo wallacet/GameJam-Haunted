@@ -12,6 +12,7 @@ GameObject:
   - 136: {fileID: 13619592}
   - 23: {fileID: 2315926}
   - 54: {fileID: 5421878}
+  - 114: {fileID: 11499678}
   m_Layer: 0
   m_Name: Barrel
   m_TagString: Untagged
@@ -41,7 +42,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 36902d2aeaa162b4ba2bb787aaecc6ba, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -77,6 +78,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &11499678
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f75181d02ef74eb44bf61d859f243f12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 147922, guid: 2f1669f77b2494748b6e958c8426e92a, type: 2}
 --- !u!136 &13619592
 CapsuleCollider:
   m_ObjectHideFlags: 1
