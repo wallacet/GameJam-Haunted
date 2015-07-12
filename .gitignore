@@ -4,6 +4,7 @@
 *.user
 *.userprefs
 *.DS_store
+*.*~
 
 Library
 Temp
