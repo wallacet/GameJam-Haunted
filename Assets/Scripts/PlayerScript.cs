@@ -48,7 +48,7 @@ public class PlayerScript : MonoBehaviour {
 			RaycastHit hit;
 			if ( Physics.Raycast( this.cam.transform.position, this.cam.transform.forward, out hit, this.maxHauntDistance, this.layersToHaunt ) ) {
 				GameObject hitRoot = hit.collider.gameObject;
-				while( hitRoot.transform.parent != null)
+				while ( hitRoot.transform.parent != null )
 					hitRoot = hitRoot.transform.parent.gameObject;
 
 				Hauntable h = hitRoot.GetComponent<Hauntable>();
@@ -62,7 +62,7 @@ public class PlayerScript : MonoBehaviour {
 					// Make haunted object our parent, so we follow it around.
 					transform.parent = h.transform;
 
-					if( movementType == MoveType.VEHICLE)
+					if ( movementType == MoveType.VEHICLE )
 						CurrentHaunted.GetComponent<DriveVehicle>().inCar = true;
 
 				}
@@ -98,36 +98,16 @@ public class PlayerScript : MonoBehaviour {
 				}
 				break;
 			case MoveType.VEHICLE:
-				/*
-				// Needs LOTS of work
-				moveDir += Vector3.ProjectOnPlane(
-									CurrentHaunted.transform.forward * Input.GetAxis( "Vertical" ),
-									Vector3.up );
-
-				// How are your math skillz, chumps?
-				moveDir *= Mathf.Clamp( Mathf.Cos( CurrentHaunted.transform.rotation.eulerAngles.z * Mathf.Deg2Rad ), 0, 1 );
-				moveDir *= Mathf.Clamp( Mathf.Cos( CurrentHaunted.transform.rotation.eulerAngles.x * Mathf.Deg2Rad ), 0, 1 );
-
-				// Happens every frame
-				
-				RaycastHit hit;
-				if ( Physics.Raycast( CurrentHaunted.transform.position, Vector3.down, out hit, 4.0f ) ) {
-					CurrentHaunted.transform.position += moveDir * Time.deltaTime * moveSpeed;
-				} else {
-					Debug.Log( "Not touching ground." );
-					Debug.DrawRay( CurrentHaunted.transform.position, Vector3.down * 4.0f, Color.red );
+				// Handled by drive script
+				break;
+			case MoveType.CRANE:
+				if ( Input.GetButtonDown( "Jump" ) ) {
+					foreach ( Transform t in CurrentHaunted.transform.Find( "Beam" ) ) {
+						t.parent = null;
+						t.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+						t.gameObject.GetComponent<BoxCollider>().enabled = true;
+					}
 				}
-
-				float curRot = CurrentHaunted.transform.rotation.eulerAngles.y;
-				float targetRot = cam.transform.rotation.eulerAngles.y;
-
-				Quaternion rot = Quaternion.Euler( CurrentHaunted.transform.rotation.eulerAngles.x,
-														Mathf.LerpAngle( curRot, targetRot, Time.deltaTime ),
-														CurrentHaunted.transform.rotation.eulerAngles.z
-														);
-
-				CurrentHaunted.transform.rotation = rot;
-				*/
 				break;
 		}
 	}
