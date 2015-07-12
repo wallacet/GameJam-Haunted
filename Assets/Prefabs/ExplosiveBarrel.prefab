@@ -90,6 +90,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 147922, guid: 2f1669f77b2494748b6e958c8426e92a, type: 2}
+  explosionSounds:
+  - {fileID: 8300000, guid: 23b8a6f26803585418808608adbcdee2, type: 3}
+  - {fileID: 8300000, guid: f54f87a1557a53041b3b32fa52846c61, type: 3}
+  - {fileID: 8300000, guid: 9da0ceecadc644f4cad98c15f234ce09, type: 3}
+  - {fileID: 8300000, guid: 5f99c1ee6511832438c3d29e1320f388, type: 3}
+  sensitivity: 1
+  timeToExplode: 5
+  scoreValue: 100
 --- !u!136 &13619592
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -109,7 +117,27 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: explosionSounds.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: explosionSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 23b8a6f26803585418808608adbcdee2, type: 3}
+    - target: {fileID: 0}
+      propertyPath: explosionSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: f54f87a1557a53041b3b32fa52846c61, type: 3}
+    - target: {fileID: 0}
+      propertyPath: explosionSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 9da0ceecadc644f4cad98c15f234ce09, type: 3}
+    - target: {fileID: 0}
+      propertyPath: explosionSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 5f99c1ee6511832438c3d29e1320f388, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 156092}

@@ -10,6 +10,8 @@ public class ExplosiveBarrelScript : Hauntable {
 	public float sensitivity = 1.0f;
 	[Tooltip( "How long does it take to explode after being nudged barely over our sensitivity? When hit harder, the time before exploding will be shorter." )]
 	public float timeToExplode = 5.0f;
+	[Tooltip( "How much score is this barrel worth when it explodes?" )]
+	public int scoreValue = 100;
 	#endregion
 
 	#region Private Variables
@@ -23,6 +25,7 @@ public class ExplosiveBarrelScript : Hauntable {
 		GameObject explosion = (GameObject) Instantiate( this.explosionPrefab, this.transform.position, this.transform.rotation );
 		explosion.GetComponent<AudioSource>().clip = this.explosionSounds[Random.Range( 0, this.explosionSounds.Length )];
 		explosion.GetComponent<AudioSource>().Play();
+		Score.AddScore( this.scoreValue );
 	}
 	#endregion
 
