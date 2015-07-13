@@ -32,7 +32,7 @@ public class TimeLimitScript : MonoBehaviour {
 			this.gameOver = true;
 
 			// End the game here
-			GameObject go = Instantiate( gameOverPrefab, Vector3.zero, Quaternion.identity ) as GameObject;
+			Instantiate( gameOverPrefab, Vector3.zero, Quaternion.identity );
 			Cursor.lockState = CursorLockMode.None;
 			Cursor.visible = true;
 

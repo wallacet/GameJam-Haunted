@@ -16,11 +16,11 @@ public class ExplosiveBarrelScript : MonoBehaviour {
 
 	#region Private Variables
 	private Rigidbody rb;
-	private bool exploding = false;
 	#endregion
 
 	#region Public Methods
 	public void Explode() {
+		this.CancelInvoke( "Explode" );
 		Destroy( this.gameObject );
 		GameObject explosion = (GameObject) Instantiate( this.explosionPrefab, this.transform.position, this.transform.rotation );
 		explosion.GetComponent<AudioSource>().clip = this.explosionSounds[Random.Range( 0, this.explosionSounds.Length )];
@@ -36,9 +36,7 @@ public class ExplosiveBarrelScript : MonoBehaviour {
 
 	public void Update() {
 		// Calculating magnetude is slow; using sqrMag instead.
-		if ( !exploding && this.rb.velocity.sqrMagnitude >= sensitivity * sensitivity ) {
-			this.exploding = true;
-			Debug.Log( "Starting explosion: " + this.rb.velocity.magnitude );
+		if ( this.rb.velocity.sqrMagnitude >= sensitivity * sensitivity ) {
 			// Since we don't do this every update, magnitude is ok.
 			this.Invoke( "Explode", this.timeToExplode / this.rb.velocity.magnitude );
 		}
