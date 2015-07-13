@@ -6,6 +6,7 @@ public class Score : MonoBehaviour {
 
 	#region Public Variables
 	public AudioClip[] scoreIncreaseSounds;
+	public GameObject scoreIncreasePrefab;
 	#endregion
 
 	#region Static Variables
@@ -13,6 +14,7 @@ public class Score : MonoBehaviour {
 	private static Text scoreDisplay;
 	private static AudioClip[] _scoreIncreaseSounds;
 	private static GameObject player;
+	private static GameObject _scoreIncreasePrefab;
 	#endregion
 
 	#region Unity Callbacks
@@ -20,6 +22,7 @@ public class Score : MonoBehaviour {
 		Score.scoreDisplay = this.GetComponent<Text>();
 		Score._scoreIncreaseSounds = this.scoreIncreaseSounds;
 		Score.player = GameObject.Find( "Player" );
+		Score._scoreIncreasePrefab = this.scoreIncreasePrefab;
 	}
 
 	public void Update() {
@@ -30,6 +33,8 @@ public class Score : MonoBehaviour {
 	#region Static Methods
 	public static int AddScore( int amountToAdd ) {
 		Score.score += amountToAdd;
+		GameObject go = Instantiate( _scoreIncreasePrefab ) as GameObject;
+		go.GetComponent<ScoreIncreaseScript>().scoreIncrease = amountToAdd;
 		AudioSource.PlayClipAtPoint(
 				Score._scoreIncreaseSounds[Random.Range( 0, Score._scoreIncreaseSounds.Length )],
 				Score.player.transform.position
