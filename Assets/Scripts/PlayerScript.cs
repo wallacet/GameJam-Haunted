@@ -4,6 +4,7 @@ using System.Collections;
 public class PlayerScript : MonoBehaviour {
 
 	#region Public Variables
+	public AudioClip[] possessionSounds;
 	[Tooltip( "How far away can the player haunt an object?" )]
 	public float maxHauntDistance = 10.0f;
 	[Tooltip( "Which physics layers should be able to be haunted?" )]
@@ -59,6 +60,10 @@ public class PlayerScript : MonoBehaviour {
 					// Jump to haunted object.
 					transform.position = h.transform.position;
 
+					// Play possession sound.
+					this.GetComponent<AudioSource>().clip = this.possessionSounds[Random.Range( 0, possessionSounds.Length )];
+					this.GetComponent<AudioSource>().Play();
+
 					// Make haunted object our parent, so we follow it around.
 					transform.parent = h.transform;
 
@@ -105,12 +110,10 @@ public class PlayerScript : MonoBehaviour {
 					foreach ( Transform t in CurrentHaunted.transform.Find( "Beam" ) ) {
 						t.parent = null;
 						t.gameObject.GetComponent<Rigidbody>().isKinematic = false;
-						if(t.gameObject.GetComponent<BoxCollider>() != null)
-						{
+						if ( t.gameObject.GetComponent<BoxCollider>() != null ) {
 							t.gameObject.GetComponent<BoxCollider>().enabled = true;
 						}
-						if(t.gameObject.GetComponent<CapsuleCollider>() != null)
-						{
+						if ( t.gameObject.GetComponent<CapsuleCollider>() != null ) {
 							t.gameObject.GetComponent<CapsuleCollider>().enabled = true;
 						}
 					}
