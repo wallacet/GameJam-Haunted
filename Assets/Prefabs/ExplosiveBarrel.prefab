@@ -12,7 +12,8 @@ GameObject:
   - 23: {fileID: 2315926}
   - 54: {fileID: 5421878}
   - 114: {fileID: 11499678}
-  - 65: {fileID: 6580750}
+  - 136: {fileID: 13677574}
+  - 65: {fileID: 6517568}
   m_Layer: 0
   m_Name: ExplosiveBarrel
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 156092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -66.2969971, y: 1.10099995, z: -31.2651215}
+  m_LocalPosition: {x: -54.262001, y: 6.19999981, z: -6.1500001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -70,7 +71,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 156092}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 1500
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -78,7 +79,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &6580750
+--- !u!65 &6517568
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -88,7 +89,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.00000012, y: 2, z: 1.00000024}
+  m_Size: {x: .600000024, y: 2, z: .600000024}
   m_Center: {x: 5.96046448e-08, y: 0, z: -8.94069672e-08}
 --- !u!114 &11499678
 MonoBehaviour:
@@ -107,9 +108,22 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f54f87a1557a53041b3b32fa52846c61, type: 3}
   - {fileID: 8300000, guid: 9da0ceecadc644f4cad98c15f234ce09, type: 3}
   - {fileID: 8300000, guid: 5f99c1ee6511832438c3d29e1320f388, type: 3}
-  sensitivity: 1
+  sensitivity: 5
   timeToExplode: 5
   scoreValue: 100
+--- !u!136 &13677574
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156092}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: .500000119
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 5.96046448e-08, y: 0, z: -8.94069672e-08}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -254,6 +254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreIncreaseSounds:
   - {fileID: 8300000, guid: ef382ad6e3bc05e49995d35f440b7df2, type: 3}
+  scoreIncreasePrefab: {fileID: 127526, guid: 82496748d4e52464c872773b0f7a582b, type: 2}
 --- !u!114 &11493618
 MonoBehaviour:
   m_ObjectHideFlags: 1
