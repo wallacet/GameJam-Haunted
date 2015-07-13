@@ -104,8 +104,9 @@ MonoBehaviour:
   gibs: {fileID: 153918, guid: 7138ba88ef84fe64697a2ed808625db5, type: 2}
   gibForce: 3
   numberGibs: 4
-  explosionSounds: []
-  sensitivity: 10
+  explosionSounds:
+  - {fileID: 8300000, guid: 0e9b2333afe7ebe4a8f349574c6af575, type: 3}
+  sensitivity: 3
   timeToExplode: .5
   scoreValue: 200
 --- !u!1001 &100100000
@@ -115,6 +116,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: explosionSounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -141,8 +146,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: sensitivity
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: explosionSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0e9b2333afe7ebe4a8f349574c6af575, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 106098}
