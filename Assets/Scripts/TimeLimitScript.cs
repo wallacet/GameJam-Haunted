@@ -6,7 +6,7 @@ public class TimeLimitScript : MonoBehaviour {
 
 	#region Public Variables
 	[Tooltip( "Time in seconds until the game ends from the start." )]
-	public float startingTime = 30.0f;
+	public float startingTime = 90.0f;
 	public GameObject gameOverPrefab;
 	#endregion
 
