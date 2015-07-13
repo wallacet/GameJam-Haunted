@@ -322,7 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7769e7ff3736ed7468879d9a11a04ef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingTime: 30
+  startingTime: 90
   gameOverPrefab: {fileID: 112640, guid: c425565b519d71b49b357d3da54d17f2, type: 2}
 --- !u!114 &11495010
 MonoBehaviour:
