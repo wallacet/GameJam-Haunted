@@ -19097,10 +19097,6 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 154860, guid: c975e95c25ae66540bec1529752526fd, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c975e95c25ae66540bec1529752526fd, type: 2}
   m_IsPrefabParent: 0
@@ -31388,38 +31384,6 @@ Prefab:
     - target: {fileID: 455462, guid: e7166edf3f6ae6e4c98d1bbd99828930, type: 2}
       propertyPath: m_RootOrder
       value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 11472662, guid: e7166edf3f6ae6e4c98d1bbd99828930, type: 2}
-      propertyPath: maxdist
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 11472662, guid: e7166edf3f6ae6e4c98d1bbd99828930, type: 2}
-      propertyPath: maxshootdist
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 11472662, guid: e7166edf3f6ae6e4c98d1bbd99828930, type: 2}
-      propertyPath: mindist
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 11472662, guid: e7166edf3f6ae6e4c98d1bbd99828930, type: 2}
-      propertyPath: distance
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 11455980, guid: e7166edf3f6ae6e4c98d1bbd99828930, type: 2}
-      propertyPath: moveSpeed
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 11455980, guid: e7166edf3f6ae6e4c98d1bbd99828930, type: 2}
-      propertyPath: jumpStrength
-      value: 400
-      objectReference: {fileID: 0}
-    - target: {fileID: 11455980, guid: e7166edf3f6ae6e4c98d1bbd99828930, type: 2}
-      propertyPath: layersToHaunt.m_Bits
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 11472662, guid: e7166edf3f6ae6e4c98d1bbd99828930, type: 2}
-      propertyPath: shoothitmask.m_Bits
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e7166edf3f6ae6e4c98d1bbd99828930, type: 2}

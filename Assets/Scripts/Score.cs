@@ -35,6 +35,7 @@ public class Score : MonoBehaviour {
 		Score.score += amountToAdd;
 		GameObject go = Instantiate( _scoreIncreasePrefab ) as GameObject;
 		go.GetComponent<ScoreIncreaseScript>().scoreIncrease = amountToAdd;
+		GameObject.Find( "UI" ).GetComponent<Animator>().SetTrigger( "glow" );
 		AudioSource.PlayClipAtPoint(
 				Score._scoreIncreaseSounds[Random.Range( 0, Score._scoreIncreaseSounds.Length )],
 				Score.player.transform.position
