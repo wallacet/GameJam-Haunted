@@ -13,6 +13,7 @@ public class GameOverScript : MonoBehaviour {
 		Cursor.visible = false;
 		Cursor.lockState = CursorLockMode.Locked;
 		Score.SetScore( 0 );
+		camAudio.Stop();
 		Application.LoadLevel( 0 );
 	}
 
